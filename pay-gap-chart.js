@@ -49,7 +49,7 @@ d3.timeFormatDefaultLocale({
   ],
 });
 
-d3.csv("https://raw.githubusercontent.com/CGRBZH/LSE_Vis/master/LSE2018_Berufsgruppe.csv").then((csv) => {
+d3.csv("https://raw.githubusercontent.com/CGRBZH/LSE_Berufsgruppe_Vis/master/LSE2018_Berufsgruppe.csv").then((csv) => {
   const data = csv.map((d) => ({
     occupation: d.Berufsgruppe,
     man: +d.Männer,

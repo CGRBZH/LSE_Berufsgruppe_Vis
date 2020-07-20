@@ -49,7 +49,7 @@ d3.timeFormatDefaultLocale({
   ],
 });
 
-d3.csv("https://dev.statistik.zh.ch:3000/STAT/LSE_Berufsgruppen_Vis/raw/branch/master/LSE2018_Berufsgruppe.csv").then((csv) => {
+d3.csv("https://raw.githubusercontent.com/CGRBZH/LSE_Vis/master/LSE2018_Berufsgruppe.csv").then((csv) => {
   const data = csv.map((d) => ({
     occupation: d.Berufsgruppe,
     man: +d.Männer,
@@ -65,7 +65,7 @@ d3.csv("https://dev.statistik.zh.ch:3000/STAT/LSE_Berufsgruppen_Vis/raw/branch/m
     { property: "occupation", order: "ascending", text: "Berufsgruppe" },
     { property: "man", order: "descending", text: "Männer" },
     { property: "woman", order: "descending", text: "Frauen" },
-    { property: "payGap", order: "descending", text: "Pay Gap" },
+    { property: "payGap", order: "descending", text: "Lohnunterschied" },
   ];
   let selectedSortOptionIndex = 3;
 
@@ -230,7 +230,7 @@ d3.csv("https://dev.statistik.zh.ch:3000/STAT/LSE_Berufsgruppen_Vis/raw/branch/m
                 .attr("class", "hover-rect")
                 .attr("x", -dotRadius)
                 .attr("height", rowHeight)
-                .attr("fill", "#eee")
+                .attr("fill", "#DCDCDC")
                 .attr("fill-opacity", 0)
                 .on("mouseenter", function (d) {
                   d3.select(this).attr("fill-opacity", 0.5);
